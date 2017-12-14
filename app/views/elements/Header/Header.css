@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* header */
+.ui-header{
+	margin-bottom: 10px;
+	width: 100%;
+/* 	background-color: #FFD100; */
+}
+	.ui-header nav{
+		position: relative;
+		margin: 0 70px;
+		text-align: center;
+		line-height: 0px;
+	}
+	.ui-logo{
+		position: absolute;
+		left: 0px;top: 0px;
+		font-size: 20px;
+		color: #000;
+		height: 56px;
+		line-height: 56px;
+	}
+		.ui-logo a{
+			margin-top: 8px;
+			width: 143px;
+			height: 40px;
+			display: block;
+			overflow: hidden;
+			text-indent: -9999px;
+			/* background: url('../../images/logo.png'); */
+		}
+	.ui-nav{
+		display: inline-block;
+		margin: 0 auto;
+		height: 56px;
+	}
+		.ui-nav li{
+			float: left;
+		}
+		.ui-nav a.current{
+			font-weight: 600;
+		}
+		.ui-nav a{
+			display: block;
+			padding: 0px 24px;
+			height: 56px;
+			line-height: 56px;
+			font-size: 14px;
+			text-align: center;
+			color: #000;
+		}
+		.ui-nav a:hover{
+			font-weight: 600;
+			color: #FFD100;
+			background-color: #000;
+		}
+	.ui-sign{
+		position: absolute;
+		right: 0px;top: 0px;
+		overflow: hidden;
+	}
+		.ui-sign-line{
+			margin: 0px 14px;
+		}
+		.ui-sign .ui-link{
+			display: inline-block;
+			height: 56px;
+			line-height: 56px;
+			font-size: 14px;
+			text-align: center;
+			color: #000;
+			cursor: pointer;
+		}
