@@ -5,4 +5,4 @@ const Button = function(props){
 		<button className={ 'ui-btn' + props.param.class } type={props.param.type}>{props.param.txt}</button>
 	)
 }
-export default InputGroup;
+export default Button;

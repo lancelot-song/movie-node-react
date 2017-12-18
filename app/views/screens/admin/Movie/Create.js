@@ -18,6 +18,7 @@ class Create extends React.Component {
 
         fetch(_action,{
             method : _type,
+            credentials: 'include',
             body : new FormData(_form)
         })
         .then(function(response){
@@ -37,13 +38,13 @@ class Create extends React.Component {
     render() {
         return (
             <div className='ui-layout'>
-                <form method='POST' action='/admin/movie/create' className='ui-form-layout' onSubmit={this.handleSubmit.bind(this)}>
+                <form method='POST' action='/admin/movie/save/' className='ui-form-layout' onSubmit={this.handleSubmit.bind(this)}>
                     <div className='ui-form-head'>
-                        <h1 className='ui-form-title'>新增电影类型</h1>
+                        <h1 className='ui-form-title'>新增电影内容</h1>
                     </div>
                     <MovieForm />
                     <div className='ui-form-foot'>
-                        <button type='submit' className='ui-btn ui-btn-success'>Save</button>
+                        <button type='submit' className='ui-btn'>Save</button>
                     </div>
                 </form>
             </div>

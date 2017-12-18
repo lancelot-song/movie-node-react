@@ -6,23 +6,23 @@ class MovieForm extends React.Component {
         super(props);
     }
     render() {
-        const { values } = this.props;
+        const { items } = this.props;
         return (
             <div className="ui-form-body">
-                <InputGroup type='text' title='电影名字' name='movie[title]' val={values.title} placeholder='请输入内容'/>
-                <InputGroup type='text' title='导演名字' name='movie[doctor]' val={values.doctor} placeholder='请输入内容'/>
-                <InputGroup type='text' title='郭嘉' name='movie[country]' val={values.country} placeholder='请输入内容'/>
-                <InputGroup type='text' title='语言' name='movie[language]' val={values.language} placeholder='请输入内容'/>
-                <InputGroup type='text' title='上映年份' name='movie[year]' val={values.year} placeholder='请输入内容'/>
-                <InputGroup type='text' title='简介' name='movie[summary]' val={values.summary} placeholder='请输入内容'/>
-                <InputGroup type='text' title='封面' name='movie[poster]' val={values.poster} placeholder='请输入内容'/>
-                <InputGroup type='text' title='播放地址' name='movie[flash]' val={values.flash} placeholder='请输入内容'/>
+                <InputGroup type='text' title='电影名字' name='movie[title]' val={items.title} placeholder='请输入内容'/>
+                <InputGroup type='text' title='导演名字' name='movie[doctor]' val={items.doctor} placeholder='请输入内容'/>
+                <InputGroup type='text' title='郭嘉' name='movie[country]' val={items.country} placeholder='请输入内容'/>
+                <InputGroup type='text' title='语言' name='movie[language]' val={items.language} placeholder='请输入内容'/>
+                <InputGroup type='text' title='上映年份' name='movie[year]' val={items.year} placeholder='请输入内容'/>
+                <InputGroup type='text' title='简介' name='movie[summary]' val={items.summary} placeholder='请输入内容'/>
+                <InputGroup type='text' title='封面' name='movie[poster]' val={items.poster} placeholder='请输入内容'/>
+                <InputGroup type='text' title='播放地址' name='movie[flash]' val={items.flash} placeholder='请输入内容'/>
             </div>
         );
     }
 }
 MovieForm.defaultProps = {
-    values : {
+    items : {
         title : '',
         doctor : '',
         country : '',
@@ -34,7 +34,7 @@ MovieForm.defaultProps = {
     }
 };
 MovieForm.PropsType = {
-    values : React.PropTypes.object
+    items : React.PropTypes.object
 }
 
 export default MovieForm;

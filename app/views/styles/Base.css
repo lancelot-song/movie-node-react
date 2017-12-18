@@ -51,6 +51,7 @@ input:focus{outline:0;}
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+.ui-center{text-align: center}
 /* 主内容区 */
 .ui-layout{
 	position: relative;
@@ -61,51 +62,62 @@ input:focus{outline:0;}
 /* 按钮 */
 .ui-btn{
 	display: inline-block;
-	background: #f8f8f8;
+	padding: 0px;
 	width: 80px;
 	height: 34px;
 	text-align: center;
 	color: #333;
 	font-size: 14px;
-	line-height: 1.43;
+	line-height: 34px;
 	border-radius: 4px;
 	cursor: pointer;
 	outline: none;
+	background-color: #ffd100;
 	border: 0px;
+}
+.ui-btn.right{
+	float: right;
+}
+.ui-btn-sm{
+	width: 54px;
+	height: 28px;
+	line-height: 28px;
 }
 	.ui-btn + .ui-btn{
 		margin-left: 8px;
 	}
 	.ui-btn-default{
 		background-color: #fff;
+		border: 1px solid #ccc;
 		color: #333;
-		border-color: #ccc;
 	}
 	.ui-btn-success{
-		background-color: #FFD100;
-		color: #333;
+		background-color: #5cb85c;
+		color: #fff;
 	}
-	.ui-btn-error{
+	.ui-btn-warning{
 		background-color: #de5145;
-		border-color: #de5145;
 		color: #fff;
 	}
 	.ui-btn-primary{
 		background-color: #4e88ee;
-		border-color: #4e88ee;
 		color: #fff;
 	}
+		.ui-btn:hover{
+			background-color: #ffba00;
+		}
 		.ui-btn-default:hover{
 			border-color: #a8a8a8;
+			background-color: #eee;
 		}
 		.ui-btn-success:hover{
-			background-color: #ffe366;
+			background-color: #449d44;
 		}
-		.ui-btn-error:hover{
-			border-color: #c23a2e;
+		.ui-btn-warning:hover{
+			background-color: #ca3428;
 		}
 		.ui-btn-primary:hover{
-			border-color: #235dc3;
+			background-color: #2a68d5;
 		}
 /* 表单元素 */
 .ui-form-layout{
@@ -114,7 +126,9 @@ input:focus{outline:0;}
 	max-width: 800px;
 }
 	.ui-form-head,.ui-form-foot{
+		position: relative;
 		padding: 10px;
+		overflow: hidden;
 	}
 	.ui-form-body{
 		padding: 15px 10px;
@@ -174,13 +188,33 @@ input:focus{outline:0;}
 		{
 			border-color: #c2c2c2;
 		}
+.ui-table{
+	width: 100%;
+	max-width: 100%;
+}
+.ui-table tr th,.ui-table tr td{
+	padding: 8px;
+	line-height: 1.43;
+	border: 1px solid #ddd;
+}
+.ui-table thead tr th{
+	border-bottom: 2px  solid #ddd;
+	font-weight: 700;
+	vertical-align: bottom;
+}
+.ui-table tbody tr td{
+	vertical-align: middle;
+}
+.ui-table .ui-btn-sm+.ui-btn-sm{
+	margin-left: 4px;
+}
 
 /* 评分 */
 .ui-score{
 	margin-top:4px;
 	display: inline-block;
-	width: 16px;
-	height: 16px;
+	width: 15px;
+	height: 15px;
 	background: url('../images/star.png') 0px -150px no-repeat;
 	cursor:pointer;
 }
@@ -190,4 +224,55 @@ input:focus{outline:0;}
 .ui-score-txt{
 	margin-left: 6px;
 	vertical-align: text-bottom;
+}
+.ui-score-result{
+	position: relative;
+	margin: 6px auto 0px;
+	padding: 0px 28px 0px 38px;
+	width: 75px;
+	height: 15px;
+	background: url('../images/star.png') 38px -150px no-repeat;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+.ui-score-result::before{
+	content: "评分：";
+	position: absolute;
+	top: 0px; left: 0px;
+	text-indent: 
+}
+.ui-score-result .ui-score-txt{
+	position: absolute;
+	top:0px; left: 112px;
+}
+.ui-score-result.ui-score-10{
+	background-position: 38px 0px;
+}
+.ui-score-result.ui-score-9{
+	background-position: 38px -15px;
+}
+.ui-score-result.ui-score-8{
+	background-position: 38px -30px;
+}
+.ui-score-result.ui-score-7{
+	background-position: 38px -45px;
+}
+.ui-score-result.ui-score-6{
+	background-position: 38px -60px;
+}
+.ui-score-result.ui-score-5{
+	background-position: 38px -75px;
+}
+.ui-score-result.ui-score-4{
+	background-position: 38px -90px;
+}
+.ui-score-result.ui-score-53{
+	background-position: 38px -105px;
+}
+.ui-score-result.ui-score-2{
+	background-position: 38px -120px;
+}
+.ui-score-result.ui-score-1{
+	background-position: 38px -135px;
 }

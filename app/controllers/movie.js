@@ -2,15 +2,12 @@ var _ = require('underscore'),//类似于jquery的方法扩展库 如extend()
 	Movie = require('../models/movie.js'),
 	Comment = require('../models/comment.js');
 
-exports.index = function(req, res){
+exports.list = function(req, res){
 	Movie.fetch(function(err,movies){
 		if(err){
 			console.log(err)
 		}
-		res.render('./admin/movieIndex',{
-			title:'后台列表页',
-			movies : movies
-		})
+		return res.json(movies);
 	})
 }
 
@@ -24,8 +21,6 @@ exports.detail = function(req, res){
 			.find({ movie : movie })
 			.populate('from', 'name')
 			.exec(function(err, comments){
-				console.log("comments:")
-				console.log(comments)
 				res.render('detail',{
 					title :'详情页',
 					movie : movie,
@@ -35,40 +30,24 @@ exports.detail = function(req, res){
 	});
 }
 
-exports.create = function(req, res){
-	res.render('./admin/movieEdit',
-		{
-			title:'后台录入页',
-			movie : {
-				title : '',
-				doctor : '',
-				country : '',
-				language : '',
-				year : '',
-				flash: '',
-				poster : '',
-				summary : ''
-			}
-		}
-	);
-}
-
-exports.createAdd = function(req, res){
-	var id = req.body.movie._id;
+exports.save = function(req, res){
+	var id = req.params.id;
 	var movieObj = req.body.movie;
 	var _movie;
-	if( id !== 'undefined'){//如果这个id已存在 则重新写入新数据
+	if( id !== undefined){//如果这个id已存在 则重新写入新数据
 		Movie.findById(id, function(err, movie){
 			if(err){
 				console.log(err)
 			}
-
 			_movie = _.extend(movie, movieObj)
 			_movie.save(function(err, movie){
 				if(err){
 					console.log(err) 
 				}
-				res.redirect('/movie/' + movie._id);
+				return res.json({
+					state : 1,
+					url : 'reload'
+				});
 			})
 		})
 	}
@@ -87,7 +66,10 @@ exports.createAdd = function(req, res){
 			if(err){
 				console.log(err)
 			}
-			res.redirect('/movie/'+movie._id);
+			return res.json({
+				state : 1,
+				url : 'reload'
+			});
 		})
 	}
 }

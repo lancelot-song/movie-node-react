@@ -9,9 +9,9 @@ class Create extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            movieForm : {
+            formModal : {
                 show : false,
-                values : null
+                items : null
             }
         }
     }
@@ -24,6 +24,7 @@ class Create extends React.Component {
 
         fetch(_action,{
             method : _type,
+            credentials: 'include',
             body : new FormData(_form)
         })
         .then(function(response){
@@ -33,8 +34,9 @@ class Create extends React.Component {
             return response.json();
         })
         .then(function(datas){
-            if(datas.status===1){
-                window.location.href = datas.url;
+            if(datas.state===1){
+                console.log('reload')
+                //window.location.reload();
             }else{
                 alert('添加分类失败');
             }
@@ -54,25 +56,25 @@ class Create extends React.Component {
         })
         .then(function(movie){
             self.setState({
-                movieForm : {
+                formModal : {
                     show : true,
-                    values : movie
+                    items : movie
                 }
             })
         })
     }
     render() {
         return (
-            <div className='ui-layout'>
-                <form method='POST' action='/admin/movie/create' className='ui-form-layout' onSubmit={this.handleSubmit.bind(this)}>
+            <div className='ui-form-layout'>
+                <form method='POST' action={ '/admin/movie/save/' + this.props.match.params.id } onSubmit={this.handleSubmit.bind(this)}>
                     <div className='ui-form-head'>
-                        <h1 className='ui-form-title'>新增电影类型</h1>
+                        <h1 className='ui-form-title'>编辑电影内容</h1>
                     </div>
-                    { this.state.movieForm.show && 
-                        <MovieForm values={this.state.movieForm.values} />
+                    { this.state.formModal.show && 
+                        <MovieForm items={this.state.formModal.items} />
                     }
                     <div className='ui-form-foot'>
-                        <button type='submit' className='ui-btn ui-btn-success'>Save</button>
+                        <button type='submit' className='ui-btn'>Save</button>
                     </div>
                 </form>
             </div>

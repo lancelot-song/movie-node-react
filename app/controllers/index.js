@@ -5,6 +5,23 @@ const path = require('path');
 exports.all = function(req, res){
 	res.sendFile(path.join(__dirname, '../views/','index.html'));
 }
+exports.list = function(req, res){
+	const _id = req.body.id || 0;
+	Movie.fetch(function(err,movies){
+		if(err){
+			console.log(err);
+		}
+		res.json(movies)
+	});
+}
+exports.banner = function(req,res){
+	Movie.fetch(function(err, movies){
+		if(err){
+			console.log(err);
+		}
+		res.json(movies)
+	});
+}
 exports.index = function(req, res){
 	let username = null;
 	if(req.session.user) {
@@ -40,4 +57,3 @@ exports.index = function(req, res){
 
 	// 	});
 }
-

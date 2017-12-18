@@ -4,8 +4,7 @@ var Index = require('../app/controllers/index'),
 	User = require('../app/controllers/user'),
 	Movie = require('../app/controllers/movie'),
 	Category = require('../app/controllers/Category'),
-	Comment = require('../app/controllers/comment'),
-	Banner = require('../app/controllers/banner');
+	Comment = require('../app/controllers/comment');
 
 
 const multer = require('multer');
@@ -25,7 +24,8 @@ module.exports = function(app){
 	app.get('/user/status', User.status);
 
 	//首页banner
-	app.get('/banner/indexBanner', Banner.indexBanner);
+	app.get('/json/index/banner', Index.banner);
+	app.get('/json/index/list', Index.list);
 
 
 	//movie 用户浏览
@@ -36,9 +36,13 @@ module.exports = function(app){
 	//movie 后台
 
 	app.post('/admin/movieCategory/create', upload.array(), Category.create);
+
+	app.post('/admin/movie/save/:id?', upload.array(), Movie.save);
+
 	app.get('/json/admin/movie/edit/:id', Movie.update);
+	app.get('/json/admin/movie/list', Movie.list);
 	
-	app.get('/admin/movie', User.signinRequired, User.adminRequired, Movie.index);
+	//app.get('/admin/movie', User.signinRequired, User.adminRequired, Movie.index);
 	//app.get('/admin/movie/create', User.signinRequired, User.adminRequired, Movie.create);
 	//app.get('/admin/movie/update/:id', User.signinRequired, User.adminRequired, Movie.update);
 	//app.post('/admin/movie/create/add', User.signinRequired, User.adminRequired, Movie.createAdd );

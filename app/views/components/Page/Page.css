@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* Page */
+.ui-page-group{
+	position: relative;
+	width: 100%;
+	text-align: right;
+}
+.ui-page-group a{
+	margin-left: 4px;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	font-size: 12px;
+	border: 1px solid #ddd;
+	color: #333;
+	background-color: #fff;
+	border-radius: 4px;
+}
+.ui-page-group a.curren{
+	font-weight: 700;
+}
+.ui-page-group a:hover{
+	background-color: #ffd100;
+	border-color: #ffd100;
+}
