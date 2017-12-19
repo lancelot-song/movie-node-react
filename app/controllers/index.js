@@ -1,5 +1,6 @@
 let Movie = require('../models/movie');//引入mongoose编译过的数据库模型
 let Category = require('../models/category');
+let Recommend = require('../models/recommend');
 const path = require('path');
 
 exports.all = function(req, res){
@@ -15,11 +16,11 @@ exports.list = function(req, res){
 	});
 }
 exports.banner = function(req,res){
-	Movie.fetch(function(err, movies){
+	Recommend.fetch(function(err, recommends){
 		if(err){
 			console.log(err);
 		}
-		res.json(movies)
+		res.json(recommends)
 	});
 }
 exports.index = function(req, res){

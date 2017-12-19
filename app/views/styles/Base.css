@@ -83,8 +83,20 @@ input:focus{outline:0;}
 	height: 28px;
 	line-height: 28px;
 }
+.ui-btn-xs{
+	width: 40px;
+	height: 24px;
+	line-height: 24px;
+	font-size: 12px;
+}
 	.ui-btn + .ui-btn{
 		margin-left: 8px;
+	}
+	.ui-btn-sm + .ui-btn-sm{
+		margin-left: 6px;
+	}
+	.ui-btn-xs + .ui-btn-xs{
+		margin-left: 4px;
 	}
 	.ui-btn-default{
 		background-color: #fff;
@@ -188,6 +200,7 @@ input:focus{outline:0;}
 		{
 			border-color: #c2c2c2;
 		}
+
 .ui-table{
 	width: 100%;
 	max-width: 100%;
@@ -196,6 +209,8 @@ input:focus{outline:0;}
 	padding: 8px;
 	line-height: 1.43;
 	border: 1px solid #ddd;
+	min-width: 80px;
+	max-width: 300px;
 }
 .ui-table thead tr th{
 	border-bottom: 2px  solid #ddd;
@@ -207,6 +222,12 @@ input:focus{outline:0;}
 }
 .ui-table .ui-btn-sm+.ui-btn-sm{
 	margin-left: 4px;
+}
+.ui-table-info{
+	word-break: break-all;
+	overflow: hidden;
+	max-height: 36px;
+	overflow-y: auto
 }
 
 /* 评分 */

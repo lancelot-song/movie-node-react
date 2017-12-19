@@ -24,11 +24,11 @@ class MovieForm extends React.Component {
                     <td>{item.language}</td>
                     <td>{item.year}</td>
                     <td>{item.meta.createdAt}</td>
-                    <td>{item.summary}</td>
+                    <td><p className='ui-table-info'>{item.summary}</p></td>
                     <td className='ui-center'>
-                        <Link to={ '/movie/detail/' + item._id } className='ui-btn ui-btn-sm ui-btn-success'>查看</Link>
-                        <Link to={ '/admin/movie/edit/' + item._id } className='ui-btn ui-btn-sm ui-btn-primary'>修改</Link>
-                        <button onClick={this.clickDel.bind( this, item._id )} className='ui-btn ui-btn-sm ui-btn-warning'>删除</button>
+                        <Link to={ '/movie/detail/' + item._id } className='ui-btn ui-btn-xs ui-btn-success'>查看</Link>
+                        <Link to={ '/admin/movie/edit/' + item._id } className='ui-btn ui-btn-xs ui-btn-primary'>修改</Link>
+                        <button onClick={this.clickDel.bind( this, item._id )} className='ui-btn ui-btn-xs ui-btn-warning'>删除</button>
                     </td>
                 </tr>
             )
@@ -38,7 +38,7 @@ class MovieForm extends React.Component {
                 <thead>
                     <tr>
                         {thead}
-                        <th className='ui-center'>操作</th>
+                        <th className='ui-center' width='150'>操作</th>
                     </tr>
                 </thead>
                 <tbody>{tbody}</tbody>

@@ -4,7 +4,8 @@ var Index = require('../app/controllers/index'),
 	User = require('../app/controllers/user'),
 	Movie = require('../app/controllers/movie'),
 	Category = require('../app/controllers/Category'),
-	Comment = require('../app/controllers/comment');
+	Comment = require('../app/controllers/comment'),
+	Recommend = require('../app/controllers/recommend');
 
 
 const multer = require('multer');
@@ -30,6 +31,8 @@ module.exports = function(app){
 
 	//movie 用户浏览
 	app.get('/movie/:id', Movie.detail);
+	app.get('/json/movie/recommend', Recommend.list);
+
 	app.post('/movie/score', Movie.score);
 	app.post('/movie/comment', Comment.save);
 
@@ -38,9 +41,12 @@ module.exports = function(app){
 	app.post('/admin/movieCategory/create', upload.array(), Category.create);
 
 	app.post('/admin/movie/save/:id?', upload.array(), Movie.save);
+	app.post('/admin/movieRecommend/save/:id?', upload.array(), Recommend.save);
 
 	app.get('/json/admin/movie/edit/:id', Movie.update);
 	app.get('/json/admin/movie/list', Movie.list);
+	
+	app.get('/json/admin/movieRecommend/list', Recommend.list);
 	
 	//app.get('/admin/movie', User.signinRequired, User.adminRequired, Movie.index);
 	//app.get('/admin/movie/create', User.signinRequired, User.adminRequired, Movie.create);

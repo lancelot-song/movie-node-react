@@ -19,7 +19,7 @@ class Index extends React.Component {
     componentDidMount(){
         const self = this;
 
-        fetch('/json/index/banner',{
+        fetch('/json/movie/recommend',{
             method : 'GET',
             credentials: 'include'
         })

@@ -9,6 +9,10 @@ import MovieDetail from './screens/public/MovieDetail/MovieDetail';
 import MovieList from './screens/admin/Movie/List';
 import MovieCreate from './screens/admin/Movie/Create';
 import MovieEdit from './screens/admin/Movie/Edit';
+import MovieRecommendList from './screens/admin/MovieRecommend/List';
+import MovieRecommendCreate from './screens/admin/MovieRecommend/Create';
+// import MovieRecommendList from './screens/admin/MovieRecommend/List';
+
 import MovieCategoryCreate from './screens/admin/MovieCategory/Create';
 
 import { BrowserRouter, Route, IndexRoute} from 'react-router-dom'
@@ -24,6 +28,9 @@ ReactDOM.render((
 			<Route path='/admin/movie/list' component={MovieList} />
 			<Route path='/admin/movie/create' component={MovieCreate} />
 			<Route path='/admin/movie/edit/:id' component={MovieEdit} />
+
+			<Route path='/admin/movieRecommend/list' component={MovieRecommendList} />
+			<Route path='/admin/movieRecommend/create' component={MovieRecommendCreate} />
 
 			<Route path='/admin/movieCategory/create' component={MovieCategoryCreate} />
 
