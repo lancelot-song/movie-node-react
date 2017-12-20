@@ -13,7 +13,9 @@ const upload = multer({ dest : 'uploads/' })
 
 module.exports = function(app){
 
-	app.locals.moment = moment;
+	//app.locals.moment = moment;
+
+	moment().format()
 
 	//session读写
 	app.use(function(req, res, next){

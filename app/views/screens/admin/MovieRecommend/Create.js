@@ -28,7 +28,6 @@ class Create extends React.Component {
             return response.json();
         })
         .then(function(datas){
-            console.log(datas)
             if(datas.status===1){
                 //window.location.href = datas.url;
             }else{
@@ -41,7 +40,7 @@ class Create extends React.Component {
             <div className='ui-layout'>
                 <form method='POST' action='/admin/movieRecommend/save/' className='ui-form-layout' onSubmit={this.handleSubmit.bind(this)}>
                     <div className='ui-form-head'>
-                        <h1 className='ui-form-title'>新增电影内容</h1>
+                        <h1 className='ui-form-title'>新增电影推荐</h1>
                     </div>
                     <MovieFormRecommend />
                     <div className='ui-form-foot'>

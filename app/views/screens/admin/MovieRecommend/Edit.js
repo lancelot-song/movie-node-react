@@ -68,7 +68,7 @@ class Create extends React.Component {
             <div className='ui-form-layout'>
                 <form method='POST' action={ '/admin/movie/save/' + this.props.match.params.id } onSubmit={this.handleSubmit.bind(this)}>
                     <div className='ui-form-head'>
-                        <h1 className='ui-form-title'>编辑电影内容</h1>
+                        <h1 className='ui-form-title'>编辑电影推荐</h1>
                     </div>
                     { this.state.formModal.show && 
                         <MovieForm items={this.state.formModal.items} />

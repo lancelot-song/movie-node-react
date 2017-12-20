@@ -88,7 +88,8 @@ class BannerSlider extends React.Component {
                 copyFirst = (
                     <li key={this.props.banner.length}>
                         <Link to={'/detail/'+slider._id} >
-                            <img src={slider.poster} alt={slider.title} width='100%' height='100%' />
+                            <img src={slider.movie.poster} alt={slider.movie.title} />
+                            <p className='ui-hot-comment'>{slider.comment}</p>
                         </Link>
                     </li>
                 )
@@ -96,7 +97,8 @@ class BannerSlider extends React.Component {
             return (
                 <li key={index}>
                     <Link to={'/detail/'+slider._id} >
-                        <img src={slider.poster} alt={slider.title} width='100%' height='100%' />
+                        <img src={slider.movie.poster} alt={slider.movie.title} />
+                        <p className='ui-hot-comment'>{slider.comment}</p>
                     </Link>
                 </li>
             )

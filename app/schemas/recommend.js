@@ -1,13 +1,13 @@
 // 模式： 此文件用于定义数据库字段类型
 
-var mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const ObjectId = Schema.Types.ObjectId;
+var mongoose = require('mongoose'),
+	Schema = mongoose.Schema,
+	ObjectId = Schema.Types.ObjectId;
 
 var RecommendSchema = new Schema({
 	movie : {
 		type : ObjectId,
-		ref : 'Movie'
+		ref : "movie"
 	},
 	comment : String,
 	meta : {

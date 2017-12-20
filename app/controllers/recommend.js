@@ -1,11 +1,9 @@
-const Recommend = require('../models/recommend.js');
+var Recommend = require('../models/recommend.js'),
+	Movie = require('../models/movie.js');
 const _ = require('underscore');
 exports.save = function(req, res){
 	const _id = req.params.id;
 	const recommendInfo = req.body.recommend;
-
-	console.log('recommendInfo')
-	console.log(recommendInfo)
 
 	let _recommend;
 	if( _id !== undefined ){
@@ -30,8 +28,6 @@ exports.save = function(req, res){
 			if(err){
 				console.log(err)
 			}
-			console.log('recommend');
-			console.log(recommend)
 			return res.json({
 				state : 1
 			})
@@ -39,24 +35,25 @@ exports.save = function(req, res){
 	}
 }
 exports.list = function(req, res){
+	Movie.findById('5a37713668443a0ce84ab034', function(err, movie){
+		if(err){
+			console.log(err)
+		}
 		Recommend
-			.find()
+			.find({})
+			.populate('movie', 'title conutry poster')
 			.exec(function(err, recommends){
-				console.log(recommends)
+				if(err){
+					console.log(err)
+				}
 				return res.json(recommends)
 			})
-	// Recommend.fetch(function(err, recommends){
-	// 	if(err){
-	// 		console.log(err)
-	// 	}
-		
-	// 	// recommends
-	// 	// 	.populate('movie','title')
-	// 	// 	.exec(function(err, recommendInfo){
-	// 	// 		if(err){
-	// 	// 			console.log(err)
-	// 	// 		}
-	// 	// 		return res.json(recommendInfo)
-	// 	// 	})
-	// })
+	});
+	// Recommend
+	// 	.find({comment:'默认评价2'})
+	// 	.populate('movie', 'country')
+	// 	.exec(function(err, recommends){
+	// 		console.log(recommends)
+	// 		return res.json(recommends)
+	// 	})
 }
