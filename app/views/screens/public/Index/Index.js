@@ -4,7 +4,6 @@ require('styles/Base.css');
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 import React from 'react';
-import Main from 'screens/Main';
 import BannerSlider from 'components/Slider/BannerSlider';
 import IndexList from 'elements/IndexList/IndexList';
 

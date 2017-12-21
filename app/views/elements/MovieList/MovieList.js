@@ -5,8 +5,8 @@ class MovieForm extends React.Component {
     constructor (props){
         super(props);
     }
-    clickDel(_id){
-
+    handleDelete(_id,_index){
+        this.props.handleDelete(_id, _index);
     }
     render() {
         const { types, items } = this.props;
@@ -28,7 +28,7 @@ class MovieForm extends React.Component {
                     <td className='ui-center'>
                         <Link to={ '/movie/detail/' + item._id } className='ui-btn ui-btn-xs ui-btn-success'>查看</Link>
                         <Link to={ '/admin/movie/edit/' + item._id } className='ui-btn ui-btn-xs ui-btn-primary'>修改</Link>
-                        <button onClick={this.clickDel.bind( this, item._id )} className='ui-btn ui-btn-xs ui-btn-warning'>删除</button>
+                        <button onClick={this.handleDelete.bind( this, item._id, index )} className='ui-btn ui-btn-xs ui-btn-warning'>删除</button>
                     </td>
                 </tr>
             )

@@ -86,15 +86,15 @@ exports.update = function(req, res){
 	}
 }
 
-exports.del = function(req, res){
-	var id = req.body.id;
+exports.delete = function(req, res){
+	var id = req.params.id;
 	if(id){
 		Movie.remove({_id : id}, function(err, movie){
 			if(err){
 				console.log(err)
 			}
 			else{
-				res.json({status : 1});
+				res.json({state : 1});
 			}
 		})
 	}
@@ -114,7 +114,7 @@ exports.score = function(req, res){
 				if(err) {
 					console.log(err)
 				}
-				res.json({ status : 1 });
+				res.json({ state : 1 });
 			});
 		})
 	}
