@@ -52,7 +52,7 @@
 		margin: auto;
 		width: 64px;
 		height: 64px;
-		background: url('/images/left_arrow.svg') 0px 0px no-repeat;
+		background: url('../../images/left_arrow.svg') 0px 0px no-repeat;
 		-moz-background-size: 100% 100%;
 		     background-size: 100% 100%;
 	}
@@ -64,7 +64,7 @@
 	}
 	.ui-banner-slider .ui-banner-slider-prev:hover::before,
 	.ui-banner-slider .ui-banner-slider-next:hover::before{
-		background: url('/images/left_arrowhover.svg') 0px 0px no-repeat;
+		background: url('../../images/left_arrowhover.svg') 0px 0px no-repeat;
 		-moz-background-size: 100% 100%;
 		     background-size: 100% 100%;
 	}

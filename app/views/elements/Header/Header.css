@@ -3,7 +3,7 @@
 .ui-header{
 	margin-bottom: 10px;
 	width: 100%;
-/* 	background-color: #FFD100; */
+	background-color: #FFD100;
 }
 	.ui-header nav{
 		position: relative;
@@ -26,7 +26,7 @@
 			display: block;
 			overflow: hidden;
 			text-indent: -9999px;
-/* 			background: url('../../images/logo.png'); */
+			background: url('../../images/logo.png');
 		}
 	.ui-nav{
 		display: inline-block;

@@ -36,7 +36,7 @@ mongoose.connect(dburl,{
 // app.set('view engine','ejs');//设置模板引擎
 //app.use(express.static(path.join(__dirname, '/app/views')));
 app.use(bodyParser.urlencoded({ extended: true }));//设置express中间件，对数据格式文本化
-app.use(serveStatic('public'));
+app.use(serveStatic('./app/views/'));
 app.use(cookieParser());
 app.use(session({
 	secret : 'lszh react secret ',
