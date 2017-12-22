@@ -43,6 +43,7 @@ module.exports = function(app){
 	app.post('/admin/movieCategory/create', upload.array(), Category.create);
 
 	app.post('/admin/movie/save/:id?', upload.array(), Movie.save);
+	app.get('/admin/movie/delete/:id', upload.array(), Movie.delete);
 	app.post('/admin/movieRecommend/save/:id?', upload.array(), Recommend.save);
 
 	app.get('/json/admin/movie/edit/:id', Movie.update);

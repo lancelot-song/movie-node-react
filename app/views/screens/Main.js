@@ -56,7 +56,7 @@ class Main extends React.Component {
             <div className='app'>
                 <Header user={user} showModal={this.showModal}/>
                 {signModal.show && <SignDialog type={signModal.type} hideModal={this.hideModal}/> }
-                <div className='ui-content'>{this.props.children}</div>
+                {this.props.children}
             </div>
         );
     }

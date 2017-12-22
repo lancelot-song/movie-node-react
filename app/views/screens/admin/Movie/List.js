@@ -48,6 +48,30 @@ class Create extends React.Component {
         })
 
     }
+    handleDelete = (_id, _index) =>{
+        const self = this;
+        fetch('/admin/movie/delete/'+_id, {
+            method : 'GET'
+        })
+        .then(function(response){
+            if(response.status > 400){
+                throw new Error('delete movie error')
+            }
+            return response.json();
+        })
+        .then(function(_data){
+            if(_data.state){
+
+                let listModal = self.state.listModal;
+                listModal.items.splice(_index,1);
+
+                self.setState({
+                    listModal : listModal
+                });
+
+            }
+        })
+    }
     componentDidMount(){
         this.loadList(0);
     }
@@ -61,7 +85,7 @@ class Create extends React.Component {
                 </div>
                 <div className='ui-form-body'>
                     { this.state.listModal.show && 
-                        <MovieList types={MovieTypes} items={this.state.listModal.items} />
+                        <MovieList types={MovieTypes} items={this.state.listModal.items} handleDelete={this.handleDelete} />
                     }
                 </div>
                 <div className='ui-form-foot'>
