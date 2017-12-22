@@ -3,7 +3,7 @@ var moment = require('moment');//格式化时间
 var Index = require('../app/controllers/index'),
 	User = require('../app/controllers/user'),
 	Movie = require('../app/controllers/movie'),
-	Category = require('../app/controllers/Category'),
+	Category = require('../app/controllers/category'),
 	Comment = require('../app/controllers/comment'),
 	Recommend = require('../app/controllers/recommend');
 
