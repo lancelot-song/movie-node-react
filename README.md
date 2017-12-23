@@ -14,14 +14,12 @@ npm install
 
 启动 MongoDB
 
-node app.js
+node app.js （建议安装nodemon运行app.js）
 
 [http://localhost:8083/](http://localhost:8083/)  
 
 
 ## 后台 
-
-
 
 **数据库**  MongoDB 
 
