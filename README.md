@@ -1,10 +1,47 @@
 
-# coding……
+# movie-node-react 
 
-目前只有
+Nodejs+MongoDB+React 电影网站项目
 
-首页列表展示 [http://39.106.144.10](http://39.106.144.10)  
+前端页面目前只有首页/后台电影管理 Coding……
 
-后台 电影增删改查 [http://39.106.144.10/admin/movie/list](http://39.106.144.10/admin/movie/list)  
+首页列表展示 [首页](http://39.106.144.10)  
 
-还没有配域名，先IP访问吧…… 
+
+## 运行项目(以管理员执行)
+
+npm install
+
+启动 MongoDB
+
+node app.js
+
+[http://localhost:8083/](http://localhost:8083/)  
+
+
+## 后台 
+
+
+
+**数据库**  MongoDB 
+
+
+**数据库建模工具** mongoose 
+
+
+**服务器端**  node+express 
+
+
+## 相关信息
+
+
+**Author**  LSZH 
+
+**Email**   896231585@qq.com 
+
+**Time**    2017/11/26 
+
+
+
+## coding……
+
