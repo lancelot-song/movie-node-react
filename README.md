@@ -3,7 +3,7 @@
 
 Nodejs+MongoDB+React 电影网站项目
 
-前端页面目前只有首页/后台电影管理 Coding……
+前端页面目前只有首页/后台电影管理
 
 [首页访问](http://39.106.144.10)  
 
@@ -37,7 +37,7 @@ node app.js （建议安装nodemon运行app.js）
 
 **Email**   896231585@qq.com 
 
-**Time**    2017/11/26 
+**Time**    2017/12/06 
 
 
 
