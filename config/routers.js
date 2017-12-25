@@ -37,7 +37,7 @@ module.exports = function(app){
 	app.post('/admin/movieCategory/create', upload.array(), Category.create);
 	//电影推荐
 	app.post('/admin/movieRecommend/save/:id?', upload.array(), Recommend.save);
-	app.get('/json/admin/movieRecommend/list', Recommend.list);
+	app.get('/json/admin/movieRecommend/list', Recommend.adminList);
 	//电影
 	app.post('/admin/movie/save/:id?', upload.array(), Movie.save);
 	app.get('/admin/movie/delete/:id', upload.array(), Movie.delete);

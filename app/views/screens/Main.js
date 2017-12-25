@@ -4,6 +4,7 @@ require('styles/Base.css');
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 import React from 'react';
+import { withRouter } from 'react-router';
 import Header from 'elements/Header/Header';
 import SignDialog from 'elements/SignDialog/SignDialog';
 
@@ -64,4 +65,4 @@ class Main extends React.Component {
 
 Main.defaultProps = {};
 
-export default Main;
+export default withRouter(Main);

@@ -27,7 +27,7 @@ module.exports = {
       },
       {
         test: /\.(js|jsx)$/,
-        loader: 'babel-loader',
+        loader: 'bundle-loader?lazy!babel-loader',
         include: [].concat(
           baseConfig.additionalPaths,
           [

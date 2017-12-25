@@ -35,25 +35,24 @@ exports.save = function(req, res){
 	}
 }
 exports.list = function(req, res){
-	Movie.findById('5a37713668443a0ce84ab034', function(err, movie){
-		if(err){
-			console.log(err)
-		}
-		Recommend
-			.find({})
-			.populate('movie', 'title conutry poster')
-			.exec(function(err, recommends){
-				if(err){
-					console.log(err)
-				}
-				return res.json(recommends)
-			})
-	});
-	// Recommend
-	// 	.find({comment:'默认评价2'})
-	// 	.populate('movie', 'country')
-	// 	.exec(function(err, recommends){
-	// 		console.log(recommends)
-	// 		return res.json(recommends)
-	// 	})
+	Recommend
+		.find({})
+		.populate('movie', 'title conutry poster')
+		.exec(function(err, recommends){
+			if(err){
+				console.log(err)
+			}
+			return res.json(recommends)
+		});
+}
+exports.adminList = function(req, res){
+	Recommend
+		.find({})
+		.populate('movie', 'title conutry poster')
+		.exec(function(err, recommends){
+			if(err){
+				console.log(err)
+			}
+			return res.json(recommends)
+		});
 }

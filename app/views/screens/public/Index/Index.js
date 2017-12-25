@@ -4,12 +4,14 @@ require('styles/Base.css');
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 import React from 'react';
+import { withRouter } from 'react-router';
 import BannerSlider from 'components/Slider/BannerSlider';
 import IndexList from 'elements/IndexList/IndexList';
 
 class Index extends React.Component {
     constructor(props){
         super(props);
+        console.log("join index")
         this.state = {
             banner : null,
             list : null
@@ -64,4 +66,4 @@ class Index extends React.Component {
 
 Index.defaultProps = {};
 
-export default Index;
+export default withRouter(Index);

@@ -2,6 +2,7 @@ require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
 import React from 'react';
+import { widthRouter } from 'react-router';
 import MovieForm from 'elements/MovieForm/MovieForm';
 
 
@@ -54,4 +55,4 @@ class Create extends React.Component {
 
 Create.defaultProps = {};
 
-export default Create;
+export default widthRouter(Create);

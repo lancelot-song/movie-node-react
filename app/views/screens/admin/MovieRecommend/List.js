@@ -2,8 +2,9 @@ require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
 import React from 'react';
-import {Link} from 'react-router-dom';
-import MovieList from 'elements/MovieList/MovieList';
+import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
+import MovieRecommendList from 'elements/MovieList/MovieRecommendList';
 import Page from 'components/Page/Page';
 
 
@@ -54,7 +55,8 @@ class Create extends React.Component {
         this.loadList(0);
     }
     render() {
-        const MovieTypes = ['电影名字','导演','郭嘉','语言','上映年份','录入时间','简介'];
+        const MovieTypes = ['电影名字','评论'];
+        console.log(this.state.listModal.items)
         return (
             <div className='ui-form-layout'>
                 <div className='ui-form-head'>
@@ -63,7 +65,7 @@ class Create extends React.Component {
                 </div>
                 <div className='ui-form-body'>
                     { this.state.listModal.show && 
-                        <MovieList types={MovieTypes} items={this.state.listModal.items} />
+                        <MovieRecommendList types={MovieTypes} items={this.state.listModal.items} />
                     }
                 </div>
                 <div className='ui-form-foot'>
@@ -76,4 +78,4 @@ class Create extends React.Component {
 
 Create.defaultProps = {};
 
-export default Create;
+export default withRouter(Create);
