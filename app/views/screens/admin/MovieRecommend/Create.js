@@ -37,8 +37,8 @@ class Create extends React.Component {
     }
     render() {
         return (
-            <div className='ui-layout'>
-                <form method='POST' action='/admin/movieRecommend/save/' className='ui-form-layout' onSubmit={this.handleSubmit.bind(this)}>
+            <div className='ui-form-layout'>
+                <form method='POST' action='/admin/movieRecommend/save/' onSubmit={this.handleSubmit.bind(this)}>
                     <div className='ui-form-head'>
                         <h1 className='ui-form-title'>新增电影推荐</h1>
                     </div>

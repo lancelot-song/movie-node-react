@@ -7,6 +7,7 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import Header from 'elements/Header/Header';
 import SignDialog from 'elements/SignDialog/SignDialog';
+import Footer from 'elements/Footer/Footer';
 
 class Main extends React.Component {
     constructor(props){
@@ -58,6 +59,7 @@ class Main extends React.Component {
                 <Header user={user} showModal={this.showModal}/>
                 {signModal.show && <SignDialog type={signModal.type} hideModal={this.hideModal}/> }
                 {this.props.children}
+                <Footer />
             </div>
         );
     }

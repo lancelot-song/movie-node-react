@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 
 class MovieForm extends React.Component {
@@ -46,4 +47,4 @@ MovieForm.PropsType = {
     items : React.PropTypes.object
 }
 
-export default MovieForm;
+export default withRouter(MovieForm);

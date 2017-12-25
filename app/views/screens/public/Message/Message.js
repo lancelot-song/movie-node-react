@@ -5,21 +5,24 @@ require('es6-promise').polyfill();
 require('isomorphic-fetch');
 import React from 'react';
 import { withRouter } from 'react-router';
-import BannerSlider from 'components/Slider/BannerSlider';
-import IndexList from 'elements/IndexList/IndexList';
+import Banner from 'components/Banner/Banner';
+import MessageBox from 'elements/MessageBox/MessageBox';
 
 class Index extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            banner : null,
-            list : null
+            banner : undefined,
+            items : []
         }
+    }
+    handleReply(){
+
     }
     componentDidMount(){
         const self = this;
 
-        fetch('/json/movie/recommend',{
+        fetch('/json/message/banner',{
             method : 'GET',
             credentials: 'include'
         })
@@ -35,7 +38,7 @@ class Index extends React.Component {
             });
         });
 
-        fetch('/json/index/list',{
+        fetch('/json/message/items',{
             method : 'GET',
             credentials: 'include'
         })
@@ -47,17 +50,18 @@ class Index extends React.Component {
         })
         .then(function(stories){
             self.setState({
-                list : stories
+                items : stories
             });
         });
 
+
     }
     render() {
-        const { banner, list } = this.state;
+        const { banner, items } = this.state;
         return (
             <div className='ui-content'>
-                {banner && <BannerSlider banner={banner} spped='.5' />}
-                {list && <IndexList items={list} />}
+                {banner && <Banner banner={banner} />}
+                <MessageBox items={items} />
             </div>
         );
     }

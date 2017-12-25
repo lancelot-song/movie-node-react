@@ -40,8 +40,6 @@ class Create extends React.Component {
             return response.json();
         })
         .then(function(movie){
-            console.log('recommend')
-            console.log(movie)
             self.setState({
                 listModal : {
                     show : true,
@@ -56,7 +54,6 @@ class Create extends React.Component {
     }
     render() {
         const MovieTypes = ['电影名字','评论'];
-        console.log(this.state.listModal.items)
         return (
             <div className='ui-form-layout'>
                 <div className='ui-form-head'>

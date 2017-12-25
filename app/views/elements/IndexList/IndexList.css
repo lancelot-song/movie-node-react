@@ -19,6 +19,8 @@ html,body{background-color:#f4f4f4;}
 			position: relative;
 			width:210px;
 			height: 315px;
+			background-color: #fff;
+			border-bottom: 1px solid #f3f3f3;
 		}
 			.item-img img{
 				position: absolute;
