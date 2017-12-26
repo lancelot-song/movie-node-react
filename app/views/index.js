@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 import Bundle from './bundle.js';
 
-import Main from './screens/Main';
+import Main from 'bundle-loader?lazy!./screens/Main';
 
 
 import Index from 'bundle-loader?lazy!./screens/public/Index/Index.js';
@@ -22,6 +22,11 @@ import MovieCategoryCreate from 'bundle-loader?lazy!./screens/admin/MovieCategor
 import { BrowserRouter, Route, IndexRoute} from 'react-router-dom';
 
 
+export const BMain = (props) => (
+    <Bundle load={Main}>
+        {(Lists) => <Lists {...props}/>}
+    </Bundle>
+)
 export const BIndex = () => (
     <Bundle load={Index}>
         {(Lists) => <Lists/>}
@@ -66,7 +71,7 @@ export const BMovieCategoryCreate = () => (
 // Render the main component into the dom
 ReactDOM.render((
 	<BrowserRouter>
-		<Main>
+		<BMain>
 			<Route exact path='/' component={BIndex} ></Route>
 
 			<Route path='message' component={BIndex} />
@@ -82,7 +87,7 @@ ReactDOM.render((
 
 			<Route path='/notFound404' />
 			<Route path='*' to='/notFound404' />
-		</Main>
+		</BMain>
 	</BrowserRouter>
 ), document.getElementById('app'));
 

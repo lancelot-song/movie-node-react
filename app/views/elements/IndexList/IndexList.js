@@ -1,7 +1,7 @@
 require('./IndexList.css')
 import React from 'react';
 import { Link } from 'react-router-dom';
-import moment from 'moment';
+// import moment from 'moment';
 
 class MovieForm extends React.Component {
     constructor (props){
@@ -23,7 +23,7 @@ class MovieForm extends React.Component {
                         </p>
                         <div className='item-from'>
                             <p className='item-doctor' title={item.doctor}>{item.doctor}</p>
-                            <p className='item-time'>{moment(item.meta.createAt).format('YYYY-MM-DD')}</p>
+                            {/*<p className='item-time'>{moment(item.meta.createAt).format('YYYY-MM-DD')}</p>*/}
                         </div>
                         <div className={'item-score item-score-'+item.score }></div>
                     </div>

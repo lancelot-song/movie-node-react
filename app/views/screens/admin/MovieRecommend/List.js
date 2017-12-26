@@ -2,7 +2,6 @@ require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
 import React from 'react';
-import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import MovieRecommendList from 'elements/MovieList/MovieRecommendList';
 import Page from 'components/Page/Page';
@@ -75,4 +74,4 @@ class Create extends React.Component {
 
 Create.defaultProps = {};
 
-export default withRouter(Create);
+export default Create;
