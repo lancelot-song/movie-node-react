@@ -1,12 +1,8 @@
-require('normalize.css/normalize.css');
-require('styles/Base.css');
-
 import React from 'react';
-import { withRouter } from 'react-router';
 import Banner from 'components/Banner/Banner';
 import MessageBox from 'elements/Message/MessageBox';
 
-class Index extends React.Component {
+class Message extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -63,6 +59,6 @@ class Index extends React.Component {
     }
 }
 
-Index.defaultProps = {};
+Message.defaultProps = {};
 
-export default withRouter(Index);
+export default Message;

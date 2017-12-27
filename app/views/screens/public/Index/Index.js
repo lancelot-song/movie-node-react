@@ -1,6 +1,3 @@
-require('normalize.css/normalize.css');
-require('styles/Base.css');
-
 import React from 'react';
 import { withRouter } from 'react-router';
 import BannerSlider from 'components/Slider/BannerSlider';

@@ -1,5 +1,3 @@
-require('normalize.css/normalize.css');
-require('styles/Base.css');
 import React from 'react';
 import Header from '../Header/Header';
 import SignDialog from '../SignDialog/SignDialog';

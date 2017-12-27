@@ -1,6 +1,3 @@
-require('normalize.css/normalize.css');
-require('styles/Base.css');
-
 import React from 'react';
 
 class Index extends React.Component {
