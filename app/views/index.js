@@ -1,12 +1,19 @@
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
+
+/* React */
 import 'core-js/fn/object/assign';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, IndexRoute} from 'react-router-dom';
 
+/* 处理React组件按需加载 */
 import Bundle from './bundle.js';
 
+/* 公用模板 */
 import Main from 'bundle-loader?lazy!./screens/Main';
 
-
+/* 前台页面 */
 import Index from 'bundle-loader?lazy!./screens/public/Index/Index.js';
 import MovieDetail from 'bundle-loader?lazy!./screens/public/MovieDetail/MovieDetail';
 
@@ -18,8 +25,6 @@ import MovieRecommendList from 'bundle-loader?lazy!./screens/admin/MovieRecommen
 import MovieRecommendCreate from 'bundle-loader?lazy!./screens/admin/MovieRecommend/Create';
 // import MovieRecommendList from './screens/admin/MovieRecommend/List';
 import MovieCategoryCreate from 'bundle-loader?lazy!./screens/admin/MovieCategory/Create';
-
-import { BrowserRouter, Route, IndexRoute} from 'react-router-dom';
 
 
 export const BMain = (props) => (

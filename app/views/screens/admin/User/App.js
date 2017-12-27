@@ -1,8 +1,5 @@
 require('normalize.css/normalize.css');
 require('styles/Base.css');
-
-require('es6-promise').polyfill();
-require('isomorphic-fetch');
 import React from 'react';
 import Header from '../Header/Header';
 import SignDialog from '../SignDialog/SignDialog';

@@ -1,8 +1,6 @@
 require('normalize.css/normalize.css');
 require('styles/Base.css');
 
-require('es6-promise').polyfill();
-require('isomorphic-fetch');
 import React from 'react';
 
 class Index extends React.Component {

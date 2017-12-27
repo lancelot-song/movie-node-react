@@ -1,6 +1,4 @@
 require('./SignDialog.css');
-require('es6-promise').polyfill();
-require('isomorphic-fetch');
 import React from 'react';
 import Dialog from 'components/Dialog/Dialog';
 import Signup from './signup';

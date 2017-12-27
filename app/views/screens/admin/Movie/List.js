@@ -1,6 +1,3 @@
-require('es6-promise').polyfill();
-require('isomorphic-fetch');
-
 import React from 'react';
 import {Link} from 'react-router-dom';
 import MovieList from 'elements/MovieList/MovieList';
