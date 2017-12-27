@@ -4,7 +4,7 @@ require('styles/Base.css');
 import React from 'react';
 import { withRouter } from 'react-router';
 import Banner from 'components/Banner/Banner';
-import MessageBox from 'elements/MessageBox/MessageBox';
+import MessageBox from 'elements/Message/MessageBox';
 
 class Index extends React.Component {
     constructor(props){
@@ -21,8 +21,7 @@ class Index extends React.Component {
         const self = this;
 
         fetch('/json/message/banner',{
-            method : 'GET',
-            credentials: 'include'
+            method : 'GET'
         })
         .then(function(response){
             if(response.status > 400){
@@ -37,8 +36,7 @@ class Index extends React.Component {
         });
 
         fetch('/json/message/items',{
-            method : 'GET',
-            credentials: 'include'
+            method : 'GET'
         })
         .then(function(response){
             if(response.status > 400){

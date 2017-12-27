@@ -51,6 +51,12 @@ input:focus{outline:0;}
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder,
+input:-ms-input-placeholder,textarea:-ms-input-placeholder,
+input:-moz-placeholder,textarea:-moz-placeholder,
+input::-moz-placeholder,textarea::-moz-placeholder{
+	color: #aaa;
+}
 .ui-center{text-align: center}
 /* 主内容区 */
 .ui-layout{
@@ -60,6 +66,23 @@ input:focus{outline:0;}
 	text-align: left;
 }
 /* 按钮 */
+.ui-btn-group{
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+}
+.ui-btn-group.center{
+	text-align: center;
+}
+.ui-btn-group.center .ui-btn{
+	margin: 0px 4px;
+}
+.ui-btn-group.right{
+	text-align: right;
+}
+.ui-btn-group.right .ui-btn + .ui-btn{
+	margin-left: 4px;
+}
 .ui-btn{
 	display: inline-block;
 	padding: 0px;

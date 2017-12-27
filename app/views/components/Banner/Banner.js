@@ -1,4 +1,4 @@
-require('./BannerSlider.css');
+require('./Banner.css');
 import React from 'react';
 import { Link } from 'react-router-dom';
 

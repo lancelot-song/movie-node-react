@@ -15,6 +15,7 @@ import Main from 'bundle-loader?lazy!./screens/Main';
 
 /* 前台页面 */
 import Index from 'bundle-loader?lazy!./screens/public/Index/Index.js';
+import Message from 'bundle-loader?lazy!./screens/public/Message/Message.js';
 import MovieDetail from 'bundle-loader?lazy!./screens/public/MovieDetail/MovieDetail';
 
 /*后台页面*/
@@ -34,6 +35,11 @@ export const BMain = (props) => (
 )
 export const BIndex = () => (
     <Bundle load={Index}>
+        {(Lists) => <Lists/>}
+    </Bundle>
+)
+export const BMessage = () => (
+    <Bundle load={Message}>
         {(Lists) => <Lists/>}
     </Bundle>
 )
@@ -79,7 +85,7 @@ ReactDOM.render((
 		<BMain>
 			<Route exact path='/' component={BIndex} ></Route>
 
-			<Route path='message' component={BIndex} />
+			<Route path='/message' component={BMessage} />
 
 			<Route path='/admin/movie/list' component={BMovieList} />
 			<Route path='/admin/movie/create' component={BMovieCreate} />
