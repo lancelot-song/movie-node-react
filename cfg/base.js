@@ -34,6 +34,7 @@ module.exports = {
       actions: `${defaultSettings.srcPath}/actions/`,
       components: `${defaultSettings.srcPath}/components/`,
       elements: `${defaultSettings.srcPath}/elements/`,
+      images: `${defaultSettings.srcPath}/images/`,
       screens: `${defaultSettings.srcPath}/screens/`,
       stores: `${defaultSettings.srcPath}/stores/`,
       styles: `${defaultSettings.srcPath}/styles/`,
