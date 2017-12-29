@@ -57,7 +57,7 @@ class Message extends React.Component {
         const { banner, items } = this.state;
         return (
             <div className='ui-content'>
-                <Banner banner={MsgBanner} />}
+                <Banner banner={MsgBanner} />
                 <MessageBox items={items} />
             </div>
         );

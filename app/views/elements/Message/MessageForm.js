@@ -3,11 +3,13 @@ import React from 'react';
 
 /*
 
-    props传值：
-        placeholder : 无内容时的提示信息,
-        maxNum :      允许输入的最多字数        默认500字,
-        height :      容器初始高度              默认40px
-        maxHeight :   最大高度                  默认126px
+    <MessageForm 
+        newMsg={this.newMsg}     提交表单事件
+        placeholder=''           无内容时的提示信息
+        btnText=''               提交按钮文字              默认留言
+        height=''                容器初始高度              默认40px
+        maxNum=''                允许输入的最多字数        默认500字
+        maxHeight='' />          最大高度                  默认126px  
 
 */
 
@@ -25,6 +27,7 @@ class MovieForm extends React.Component {
                 scroll : 'hidden'
             },
             initHeight : 0,
+            btnText : this.props.btnText || '留言'
         }
     }
     newMsg(msg){
@@ -96,7 +99,7 @@ class MovieForm extends React.Component {
                             }}></textarea>
                     </div>
                     <div className='ui-btn-group right'>
-                        <button className='ui-btn'>留言</button>
+                        <button className='ui-btn'>{this.state.btnText}</button>
                     </div>
                 </form>
             </div>

@@ -1,5 +1,6 @@
 import React from 'react';
-import DialogTip from 'components/Dialog/DialogTip'
+import DialogTip from 'components/Dialog/DialogTip';
+import InputGroup from 'components/InputGroup/InputGroup';
 
 
 class Signup extends React.Component{
@@ -31,14 +32,16 @@ class Signup extends React.Component{
             <form method="POST" action='/user/signup' id='signup' onSubmit={this.props.submitForm.bind(this, 'signup')}>
                 <div className='ui-dialog-head'>注册</div>
                 <div className='ui-dialog-body'>
-                    <div className='ui-form-group'>
-                        <label className='ui-form-label'>用户名</label>
-                        <input className='ui-form-control' type='text' placeholder='请输入用户名' name='user[name]' />
-                    </div>
-                    <div className='ui-form-group'>
-                        <label className='ui-form-label'>密码</label>
-                        <input className='ui-form-control' type='password' placeholder='请输入密码' name='user[password]' />
-                    </div>
+                    <InputGroup
+                        labelText='用户名'
+                        inputType='text'
+                        placeholder='请输入用户名'
+                        name='user[name]' />
+                    <InputGroup
+                        labelText='密码'
+                        inputType='password'
+                        placeholder='请输入密码'
+                        name='user[password]' />
                 </div>
                 { tip.show &&
                   <DialogTip txt={tip.txt} />

@@ -1,16 +1,17 @@
 @charset "utf-8";
 /* MessageBox */
+html,body{background-color:#f4f4f4;}
 .ui-msg-box{
 	margin: 0px auto;
-	padding: 0px 30px;
 	width: 1000px;
 	background: #fff;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
+	border-radius: 4px;
 }
 	.ui-msg-form{
 		position: relative;
-		padding: 30px 0px 34px;
+		padding: 30px 30px 34px;
 	}
 		.ui-msg-form .input-num{
 			position: absolute;
@@ -42,3 +43,7 @@
 		.ui-textarea textarea:focus{
 			background-color: #fff;
 		}
+.ui-msg-list{
+	padding: 0px 30px;
+	border-top: 1px solid #eee;
+}

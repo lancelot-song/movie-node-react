@@ -8,7 +8,7 @@ class Banner extends React.Component {
     render() {
         return (
             <div className='ui-layout'>
-                <div className='ui-banner-slider' ref='bannerSliderContent'>
+                <div className='ui-banner' ref='bannerSliderContent'>
                     <img src={this.props.banner} />
                 </div>
             </div>

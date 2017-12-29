@@ -31,14 +31,16 @@ class Signin extends React.Component{
             <form method="POST" action='/user/signin' id='signin' onSubmit={this.props.submitForm.bind(this, 'signin')}>
                 <div className='ui-dialog-head'>登录</div>
                 <div className='ui-dialog-body'>
-                    <div className='ui-form-group'>
-                        <label className='ui-form-label'>用户名</label>
-                        <input className='ui-form-control' type='text' placeholder='请输入用户名' name='user[name]' />
-                    </div>
-                    <div className='ui-form-group'>
-                        <label className='ui-form-label'>密码</label>
-                        <input className='ui-form-control' type='password' placeholder='请输入密码' name='user[password]' />
-                    </div>
+                    <InputGroup
+                        labelText='用户名'
+                        inputType='text'
+                        placeholder='请输入用户名'
+                        name='user[name]' />
+                    <InputGroup
+                        labelText='密码'
+                        inputType='password'
+                        placeholder='请输入密码'
+                        name='user[password]' />
                 </div>
                 { tip.show &&
                   <DialogTip txt={tip.txt} />

@@ -24,6 +24,10 @@
 		float: right;
 		font-size: 14px;
 		color: #666;
+		cursor: pointer;
+	}
+	.msg-hd .msg-reply:hover{
+		text-decoration: underline
 	}
 	.msg-hd .msg-name{
 		margin-right: 24px;
@@ -43,4 +47,9 @@
 	font-size: 14px;
 	line-height: 22px;
 	color: #666;
+}
+
+
+.msg-item .ui-msg-form{
+	padding: 15px 0px;
 }

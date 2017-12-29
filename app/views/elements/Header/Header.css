@@ -70,3 +70,6 @@
 			color: #000;
 			cursor: pointer;
 		}
+		.ui-sign .ui-link:hover{
+			text-decoration: underline;
+		}
