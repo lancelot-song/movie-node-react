@@ -5,6 +5,7 @@ exports.save = function(req, res){
 	const _id = req.params.id;
 	const recommendInfo = req.body.recommend;
 
+	console.log(recommendInfo)
 	let _recommend;
 	if( _id !== undefined ){
 		Recommend.findById(_id, function(err, recommend){

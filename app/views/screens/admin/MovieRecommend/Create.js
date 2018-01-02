@@ -12,7 +12,7 @@ class Create extends React.Component {
         const _form = event.target;
         const _type = _form.method;
         const _action = _form.action;
-
+        console.log(_form);
         fetch(_action,{
             method : _type,
             credentials: 'include',
@@ -25,10 +25,11 @@ class Create extends React.Component {
             return response.json();
         })
         .then(function(datas){
-            if(datas.status===1){
+            if(datas.state===1){
+                alert('添加推荐成功');
                 //window.location.href = datas.url;
             }else{
-                alert('添加分类失败');
+                alert('添加推荐失败');
             }
         })
     }

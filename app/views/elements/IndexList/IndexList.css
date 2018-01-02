@@ -11,6 +11,7 @@ html,body{background-color:#f4f4f4;}
 		float: left;
 		position: relative;
 		margin-right: 24px;
+		margin-bottom: 18px;
 		width: 210px;
 		border-radius: 4px;
 		overflow: hidden;
@@ -54,6 +55,7 @@ html,body{background-color:#f4f4f4;}
 					color: #bbb;
 				}
 				.item-doctor{
+					display: none;
 					float: left;
 					text-overflow: ellipsis;
 					white-space: nowrap;
