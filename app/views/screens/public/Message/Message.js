@@ -7,34 +7,27 @@ class Message extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            items : [{
-                user : {
-                    name : 'lszh'
-                },
-                content : '123123123'
-            }]
+            items : null
         }
     }
-    handleReply(){
+    newMsg = (content, user, key) =>{
+        if(index){
 
+        }
+        else{
+            let item = {
+                user : user,
+                content : content
+            }
+            let items = this.state.items;
+            items.unshift(item);
+            this.setState({
+                items : items
+            });
+        }
     }
     componentDidMount(){
         const self = this;
-
-        fetch('/json/message/banner',{
-            method : 'GET'
-        })
-        .then(function(response){
-            if(response.status > 400){
-                throw new Error('App.js 请求数据失败')
-            }
-            return response.json();
-        })
-        .then(function(stories){
-            self.setState({
-                banner : stories
-            });
-        });
 
         fetch('/json/message/items',{
             method : 'GET'
@@ -58,7 +51,7 @@ class Message extends React.Component {
         return (
             <div className='ui-content'>
                 <Banner banner={MsgBanner} />
-                <MessageBox items={items} />
+                { items && <MessageBox items={items} />}
             </div>
         );
     }

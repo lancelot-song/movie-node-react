@@ -9,8 +9,8 @@ class MovieForm extends React.Component {
         const { items } = this.props;
         return (
             <div className="ui-form-body">
-                <InputGroup inputType='text' labelText='电影名字' inputName='recommend[movie]' inputVal='5a4b0106f394943f88a6cbe1' placeholder='请输入内容'/>
-                <InputGroup inputType='text' labelText='电影简介' inputName='recommend[comment]' inputVal={items.comment} placeholder='请输入内容'/>
+                <InputGroup inputType='text' labelText='电影名字' name='recommend[movie]' inputVal='5a4b0106f394943f88a6cbe1' placeholder='请输入内容'/>
+                <InputGroup inputType='text' labelText='电影简介' name='recommend[comment]' inputVal={items.comment} placeholder='请输入内容'/>
             </div>
         );
     }

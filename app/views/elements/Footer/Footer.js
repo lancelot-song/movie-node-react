@@ -9,11 +9,7 @@ class Footer extends React.Component {
     }
     render() {
         return (
-            <div className="ui-footer">
-                <div className="ui-layout">
-                    <Menu />
-                </div>
-            </div>
+            <div className="ui-footer"><Menu /></div>
         );
     }
 }

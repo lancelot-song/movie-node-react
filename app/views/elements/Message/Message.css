@@ -9,9 +9,13 @@ html,body{background-color:#f4f4f4;}
 	box-sizing: border-box;
 	border-radius: 4px;
 }
-	.ui-msg-form{
+	.ui-msg-form,.ui-msg-login{
 		position: relative;
 		padding: 30px 30px 34px;
+	}
+	.ui-msg-login{
+		text-align: center;
+		color: #666;
 	}
 		.ui-msg-form .input-num{
 			position: absolute;

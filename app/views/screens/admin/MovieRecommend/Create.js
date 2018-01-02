@@ -12,7 +12,7 @@ class Create extends React.Component {
         const _form = event.target;
         const _type = _form.method;
         const _action = _form.action;
-        console.log(_form);
+        
         fetch(_action,{
             method : _type,
             credentials: 'include',

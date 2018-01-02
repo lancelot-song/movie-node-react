@@ -1,6 +1,5 @@
 @charset "utf-8";
 /* indexlist */
-html,body{background-color:#f4f4f4;}
 .ui-content-list{
 	position: relative;
 	margin: 20px 0px;
@@ -29,11 +28,11 @@ html,body{background-color:#f4f4f4;}
 				width: 100%;
 			}
 		.item-info{
-			padding:8px 14px;
+			padding:8px 0px;
 			background-color: #fff;
 		}
 			.item-title{
-				font-size: 14px;
+				font-size: 16px;
 				line-height: 26px;
 				text-overflow: ellipsis;
 				white-space: nowrap;

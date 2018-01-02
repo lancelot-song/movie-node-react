@@ -22,26 +22,28 @@ class MessageItem extends React.Component {
         })
     }
     render() {
-        const item = this.props.item;
-        console.log(item);
+        const { item, user } = this.props;
         return (
             <div className='msg-item'>
                 <div className='msg-photo'>
                     <img src={userPhoto} />
                 </div>
                 <div className='msg-hd'>
-                    <span className='msg-name'>{item.user.name}</span>
+                    <span className='msg-name'>{item.from.name}</span>
                     {/*<span className='msg-time'>{item.meta.createAt}</span>*/}
-                    <span className='msg-reply' onClick={this.handleReply}>回复</span>
+                    {   user.name &&
+                        <span className='msg-reply' onClick={this.handleReply}>回复</span>
+                    }
                 </div>
                 <div className='msg-bd'>
                     <p>{item.content}</p>
                 </div>
                 { 
-                    this.state.replayModal.show && 
+                    user.name && this.state.replayModal.show && 
                     <MessageForm 
                         newMsg={this.newMsg}
                         btnText='回复'
+                        user={user}
                         placeholder='请输入回复内容' />
                 }
             </div>

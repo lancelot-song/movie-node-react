@@ -1,12 +1,14 @@
 @charset "utf-8";
 /* CSS Document */
-
 html{color:#000;background:#FFF;overflow: scroll;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
 overflow-x: hidden;}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,
 fieldset,input,textarea,p,blockquote,th,td {
 margin:0 auto;
-padding:0; font-family:verdana,"\5FAE\8F6F\96C5\9ED1"; font-size:12px;
+padding:0; font-family:PingFangSC-Regular,Tahoma,Microsoft Yahei,sans-serif,Arial; font-size:12px;
+
 }
 a { text-decoration: none;outline: none; -webkit-tap-highlight-color:transparent;outline:none;}
 /*
@@ -64,6 +66,9 @@ input::-moz-placeholder,textarea::-moz-placeholder{
 	width: 1380px;
 	overflow: hidden;
 	text-align: left;
+}
+.ui-header + .ui-content{
+	min-height: 1100px;
 }
 /* 按钮 */
 .ui-btn-group{

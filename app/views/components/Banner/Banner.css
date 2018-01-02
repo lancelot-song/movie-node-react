@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* BannerSlider */
 .ui-banner{
+	margin-bottom: 30px;
 	position: relative;
 	padding-top: 25.36%;
 	width: 100%;

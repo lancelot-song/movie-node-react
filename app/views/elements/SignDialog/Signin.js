@@ -1,5 +1,6 @@
 import React from 'react';
-import DialogTip from 'components/Dialog/DialogTip'
+import InputGroup from 'components/InputGroup/InputGroup';
+import DialogTip from 'components/Dialog/DialogTip';
 
 
 class Signin extends React.Component{

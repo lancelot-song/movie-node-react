@@ -1,11 +1,27 @@
 const User = require('../models/user.js');//引入User数据库模型
 
 exports.status = function(req,res){
-	let username = null;
+	let username;
 	if(req.session.user){
-		username = req.session.user.name
+		username = req.session.user.name;
+		User.findOne({ name : username }, function(err, user){
+			if(err) console.log(err);
+			if(user){
+				return res.json({ 
+					_id : user._id,
+					name : username
+				});
+			}
+			else{
+				return res.json({
+					name : false
+				})
+			}
+		})
 	}
-	res.json({ name : username })
+	else{
+		return res.json({ name : false });
+	}
 }
 
 exports.goSignup = function(req, res){

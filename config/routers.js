@@ -5,6 +5,7 @@ var Index = require('../app/controllers/index'),
 	Movie = require('../app/controllers/movie'),
 	Category = require('../app/controllers/category'),
 	Comment = require('../app/controllers/comment'),
+	Message = require('../app/controllers/Message'),
 	Recommend = require('../app/controllers/recommend');
 
 
@@ -26,6 +27,9 @@ module.exports = function(app){
 	//首页
 	app.get('/json/index/banner', Index.banner);
 	app.get('/json/index/list', Index.list);
+	//留言板
+	app.post('/message/new', upload.array(), Message.save);
+	app.get('/json/message/items', upload.array(), Message.items);
 	//电影推荐列表
 	app.get('/json/movie/recommend', Recommend.list);
 

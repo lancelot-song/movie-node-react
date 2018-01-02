@@ -13,14 +13,14 @@ class InputGroup extends React.Component{
 		});
 	}
 	render(){
-		const { labelText, inputType, inputName, placeholder } = this.props;
+		const { labelText, inputType, name, placeholder } = this.props;
 		return (
 			<div className='ui-form-group'>
 				<label className='ui-form-label'>{labelText}</label>
 				<input 
 					className='ui-form-control' 
 					type={inputType} 
-					name={inputName} 
+					name={name} 
 					placeholder={placeholder} 
 					value={this.state.inputVal}
 					onChange={this.handleChange}  />
