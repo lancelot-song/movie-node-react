@@ -13,17 +13,22 @@ exports.save = function(req, res){
 			message.reply.push(reply);
 			message.save(function(err, message){
 				if(err) console.log(err);
-				return res.json({ state : 1 });
+				return res.json(message);
 			})
 		});
 	}
 	else{
 		let message = new Message(_message);
-		message.save(function(err, message){
+		message.save(function(err, msg){
 			if(err){
 				console.log(err)
 			}
-			res.json(message)
+			Message
+				.findOne({ "_id" : msg._id})
+				.populate('from', 'name')
+				.exec(function(err, msg){
+					return res.json(msg)
+				});
 		});
 	}
 
@@ -33,6 +38,7 @@ exports.items = function(req, res){
 		.find({})
 		.populate('from', 'name')
 		.populate('reply.from reply.to', 'name')
+		.sort({"_id":-1})
 		.exec(function(err, messages){
 			if(err) console.log(err);
 			console.log(messages)

@@ -5,7 +5,7 @@ var Index = require('../app/controllers/index'),
 	Movie = require('../app/controllers/movie'),
 	Category = require('../app/controllers/category'),
 	Comment = require('../app/controllers/comment'),
-	Message = require('../app/controllers/Message'),
+	Message = require('../app/controllers/message'),
 	Recommend = require('../app/controllers/recommend');
 
 

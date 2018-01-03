@@ -4,6 +4,7 @@
 	margin-bottom: 10px;
 	width: 100%;
 	background-color: #FFD100;
+	min-width:1380px
 }
 	.ui-header nav{
 		position: relative;

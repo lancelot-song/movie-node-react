@@ -10,21 +10,28 @@ class Message extends React.Component {
             items : null
         }
     }
-    newMsg = (content, user, key) =>{
-        if(index){
-
-        }
-        else{
-            let item = {
-                user : user,
-                content : content
+    postMsg = (event) =>{
+        event.preventDefault();
+        const _form = event.target;
+        const self = this;
+        fetch('/message/new',{
+            method : 'POST',
+            credentials: 'include',
+            body : new FormData(_form)
+        })
+        .then(function(response){
+            if( response.status > 400){
+                throw new Error('post /message/new error')
             }
-            let items = this.state.items;
-            items.unshift(item);
-            this.setState({
+            return response.json();
+        })
+        .then(function(data){
+            let items = self.state.items;
+            items.unshift(data);
+            self.setState({
                 items : items
             });
-        }
+        });
     }
     componentDidMount(){
         const self = this;
@@ -44,14 +51,13 @@ class Message extends React.Component {
             });
         });
 
-
     }
     render() {
         const { banner, items } = this.state;
         return (
             <div className='ui-content'>
                 <Banner banner={MsgBanner} />
-                { items && <MessageBox items={items} />}
+                { items && <MessageBox items={items} postMsg={this.postMsg} />}
             </div>
         );
     }

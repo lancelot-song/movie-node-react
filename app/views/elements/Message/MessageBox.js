@@ -14,27 +14,7 @@ class MovieForm extends React.Component {
         }
     }
     postMsg = (event) => {
-        event.preventDefault();
-
-        const _form = event.target;
-        const self = this;
-        fetch('/message/new',{
-            method : 'POST',
-            credentials: 'include',
-            body : new FormData(_form)
-        })
-        .then(function(response){
-            if( response.status > 400){
-                throw new Error('post /message/new error')
-            }
-            return response.json();
-        })
-        .then(function(data){
-            data.state == 1 && self.appendMsg();
-        });
-    }
-    appendMsg (){
-
+        this.props.postMsg(event);
     }
     componentDidMount(){
         const self = this;
@@ -60,7 +40,7 @@ class MovieForm extends React.Component {
         return (
             <div className='ui-msg-box'>
                 { user.name ? 
-                    <MessageForm postMsg={this.postMsg} placeholder='此页暂不可用' btnText='留言' user={user}/>
+                    <MessageForm postMsg={this.postMsg} placeholder='此页暂不可用' btnText='留言' fromId={user._id}/>
                     : <div className='ui-msg-login'>回复/留言 请先登录</div>
                 }
                 <MessageList postMsg={this.postMsg} items={items} user={user}/>
