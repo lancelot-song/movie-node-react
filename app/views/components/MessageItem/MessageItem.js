@@ -13,6 +13,9 @@ class MessageItem extends React.Component {
             } 
         }
     }
+    postMsg = (event) =>{//提交表单
+        this.props.postMsg(event);
+    }
     handleReply = () => {
         const replayModal = this.state.replayModal;
         this.setState({
@@ -41,10 +44,13 @@ class MessageItem extends React.Component {
                 { 
                     user.name && this.state.replayModal.show && 
                     <MessageForm 
-                        newMsg={this.newMsg}
                         btnText='回复'
-                        user={user}
-                        placeholder='请输入回复内容' />
+                        placeholder='请输入回复内容'
+                        postMsg={this.postMsg}
+                        reply={true}
+                        fromId={user._id}
+                        toId={item.from._id}
+                        replyId={item._id} />
                 }
             </div>
         );

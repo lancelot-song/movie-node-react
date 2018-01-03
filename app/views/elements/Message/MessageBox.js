@@ -63,7 +63,7 @@ class MovieForm extends React.Component {
                     <MessageForm postMsg={this.postMsg} placeholder='此页暂不可用' btnText='留言' user={user}/>
                     : <div className='ui-msg-login'>回复/留言 请先登录</div>
                 }
-                <MessageList items={items} user={user}/>
+                <MessageList postMsg={this.postMsg} items={items} user={user}/>
             </div>
         );
     }

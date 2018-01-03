@@ -10,7 +10,7 @@ class MovieForm extends React.Component {
         this.props.postMsg(event);
     }
     render() {
-        const { items, placeholder, user, btnText } = this.props;
+        const { placeholder, fromId, toId, replyId, btnText, reply } = this.props;
         return (
             <div className='ui-msg-form'>
                 <form method='POST' action='/message/new/' onSubmit={this.postMsg}>
@@ -19,7 +19,11 @@ class MovieForm extends React.Component {
                         name='message[content]'
                         maxHeight='150'
                         maxNum='500' />
-                    <input type="hidden" name='message[from]' value={user._id} />
+                    <input type="hidden" name='message[from]' value={fromId} />
+                    { reply && 
+                        <input type="hidden" name='message[to]' value={toId} /> &&
+                        <input type="hidden" name='message[reply]' value={replyId} />
+                    }
                     <div className='ui-btn-group right'>
                         <button className='ui-btn'>{btnText}</button>
                     </div>
@@ -29,8 +33,6 @@ class MovieForm extends React.Component {
     }
 }
 MovieForm.defaultProps = {};
-MovieForm.PropsType = {
-    items : React.PropTypes.object
-}
+MovieForm.PropsType = {}
 
 export default MovieForm;
