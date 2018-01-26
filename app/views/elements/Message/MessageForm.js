@@ -3,17 +3,62 @@ import TextareaGroup from 'components/TextareaGroup/TextareaGroup';
 // import moment from 'moment';
 
 class MovieForm extends React.Component {
+
+    static contextTypes = {
+        store : React.PropTypes.object
+    }
+
     constructor (props){
         super(props);
     }
-    postMsg = (event) =>{//提交表单
-        this.props.postMsg(event);
+
+    //绑定表单提交
+    submitHandle = (event) =>{
+        event.preventDefault();
+        const callback = this._addMsg;
+        const form = event.target;
+        this._postMsg(form, callback);
     }
+
+    //POST数据
+    _postMsg = (form, callback) =>{
+
+        const store = this.context.store;
+        const { subParam } = store.getState();
+
+        fetch( subParam.url ,{
+            method : subParam.type,
+            credentials: 'include',
+            body : new FormData(form)
+        })
+        .then(function(response){
+            if( response.status > 400){
+                throw new Error(subParam.error)
+            }
+            return response.json();
+        })
+        .then(function(data){
+            callback(data);
+        });
+
+    }
+
+    //POST成功 渲染新数据
+    _addMsg = (data) => {
+        const store = this.context.store;
+        const state = store.getState();
+        state.items.unshift(data);
+        store.dispatch({
+            type : "UPDATE_ITEMS",
+            items : state.items
+        });
+    }
+
     render() {
         const { placeholder, fromId, toId, replyId, btnText, reply } = this.props;
         return (
             <div className='ui-msg-form'>
-                <form method='POST' action='/message/new/' onSubmit={this.postMsg}>
+                <form method='POST' action='/message/new/' onSubmit={this.submitHandle}>
                     <TextareaGroup 
                         placeholder={placeholder}
                         name='message[content]'

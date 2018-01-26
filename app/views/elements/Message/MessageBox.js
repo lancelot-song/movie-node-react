@@ -5,40 +5,34 @@ import MessageList from './MessageList';
 // import moment from 'moment';
 
 class MovieForm extends React.Component {
+    static contextTypes = {
+        store : React.PropTypes.object
+    }
     constructor (props){
         super(props);
-        this.state = {
-            user : {
-                name : null
-            }
-        }
+        this.user = { user : null }
     }
-    postMsg = (event) => {
-        this.props.postMsg(event);
+    postMsg = (event,itemId) => {
+        itemId!==undefined ?
+            this.props.postMsg(event,itemId)
+            : this.props.postMsg(event)
     }
-    componentDidMount(){
-        const self = this;
-        fetch('/user/status',{
-            method : 'GET',
-            credentials: 'include'
-        })
-        .then(function(response){
-            if(response.status > 400){
-                throw new Error('App.js 请求数据失败')
-            }
-            return response.json();
-        })
-        .then(function(stories){
-            self.setState({
-                user : stories
-            });
+    componentWillMount () {
+        this._getContextStore();
+    }
+    _getContextStore (){
+        const { store } = this.context;
+        const state = store.getState();
+        console.log(state);
+        this.setState({
+            user : state.user
         });
     }
     render() {
-        const { items } = this.props;
-        const user = this.state.user;
+        const { items, user } = this.props;
         return (
             <div className='ui-msg-box'>
+                { this.state.user.name }
                 { user.name ? 
                     <MessageForm postMsg={this.postMsg} placeholder='此页暂不可用' btnText='留言' fromId={user._id}/>
                     : <div className='ui-msg-login'>回复/留言 请先登录</div>
@@ -49,8 +43,6 @@ class MovieForm extends React.Component {
     }
 }
 MovieForm.defaultProps = {};
-MovieForm.PropsType = {
-    items : React.PropTypes.object
-}
+MovieForm.PropsType = {}
 
 export default MovieForm;

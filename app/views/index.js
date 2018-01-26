@@ -27,7 +27,6 @@ import MovieRecommendCreate from 'bundle-loader?lazy!./screens/admin/MovieRecomm
 // import MovieRecommendList from './screens/admin/MovieRecommend/List';
 import MovieCategoryCreate from 'bundle-loader?lazy!./screens/admin/MovieCategory/Create';
 
-
 export const BMain = (props) => (
     <Bundle load={Main}>
         {(Lists) => <Lists {...props}/>}
@@ -83,7 +82,7 @@ export const BMovieCategoryCreate = () => (
 ReactDOM.render((
 	<BrowserRouter>
 		<BMain>
-			<Route exact path='/' component={BIndex} ></Route>
+            <Route exact path='/' component={BIndex} ></Route>
 
 			<Route path='/message' component={BMessage} />
 

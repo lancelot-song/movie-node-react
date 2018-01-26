@@ -13,8 +13,10 @@ class MessageItem extends React.Component {
             } 
         }
     }
-    postMsg = (event) =>{//提交表单
-        this.props.postMsg(event);
+    postMsg = (event, itemId) =>{//提交表单
+        itemId!==undefined ?
+            this.props.postMsg(event,itemId)
+            : this.props.postMsg(event)
     }
     handleReply = () => {
         const replayModal = this.state.replayModal;
@@ -25,7 +27,7 @@ class MessageItem extends React.Component {
         })
     }
     render() {
-        const { item, user } = this.props;
+        const { item, user, itemId } = this.props;
         return (
             <div className='msg-item'>
                 <div className='msg-photo'>
@@ -48,6 +50,7 @@ class MessageItem extends React.Component {
                         placeholder='请输入回复内容'
                         postMsg={this.postMsg}
                         reply={true}
+                        itemId={itemId}
                         fromId={user._id}
                         toId={item.from._id}
                         replyId={item._id} />
